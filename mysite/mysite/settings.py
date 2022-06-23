@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+        'drf_yasg',
+
 
     'address'
 ]
@@ -128,3 +130,28 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # FIXTURE_DIRS = (
 #     os.path.join(BASE_DIR, 'address', 'fixtures'),
 # )
+
+
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
+
+
+
+api_info = openapi.Info(
+title="MedicalApp API",
+default_version='v1',
+)
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="MedicalApp API",
+        default_version='v1',
+        description='Api Document for the Medical App',
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="oyasser@yds-int.com"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
