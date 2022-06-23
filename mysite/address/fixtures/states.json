@@ -1,0 +1,32 @@
+[
+    
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"القاهرة","name":"Cairo"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الجيزة","name":"Giza"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الأسكندرية","name":"Alexandria"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الدقهلية","name":"Dakahlia"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"البحر الأحمر","name":"Red Sea"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"البحيرة","name":"Beheira"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الفيوم","name":"Fayoum"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الغربية","name":"Gharbiya"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الإسماعلية","name":"Ismailia"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"المنوفية","name":"Menofia"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"المنيا","name":"Minya"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"القليوبية","name":"Qaliubiya"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الوادي الجديد","name":"New Valley"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"السويس","name":"Suez"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"اسوان","name":"Aswan"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"اسيوط","name":"Assiut"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"بني سويف","name":"Beni Suef"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"بورسعيد","name":"Port Sacountry_id"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"دمياط","name":"Damietta"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الشرقية","name":"Sharkia"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"جنوب سيناء","name":"South Sinai"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"كفر الشيخ","name":"Kafr Al sheikh"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"مطروح","name":"Matrouh"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"الأقصر","name":"Luxor"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"قنا","name":"Qena"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"شمال سيناء","name":"North Sinai"}},
+    {"model":"address.state","fields":{"country_id":"1","name_ar":"سوهاج","name":"Sohag"}}
+    
+    
+]

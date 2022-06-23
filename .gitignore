@@ -1,0 +1,9 @@
+*.pyc
+.__pycache__
+__pycache__
+00*.py
+.env
+env
+.vscode
+.devcontainer
+.pytest_cache
