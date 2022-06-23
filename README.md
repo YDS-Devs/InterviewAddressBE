@@ -37,8 +37,9 @@ Load data using the following command
 ```
 .\mysite\loaddata.bat
 ```
-
+# ----------------------------------------------------------------------------------
 IF Unix/MacOS:
+
 Initialize pip virutal env first you will need to install virtual env from pip
 
 ```
