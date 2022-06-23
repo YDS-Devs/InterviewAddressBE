@@ -25,7 +25,10 @@ Install requirements.txt file
 ```
 pip install -r requirements.txt
 ```
-
+Go into mysite folder
+```
+cd mysite
+```
 Run server using the following command
 
 ```
@@ -62,6 +65,10 @@ Install requirements.txt file
 
 ```
 pip install -r requirements.txt
+```
+Go into mysite folder
+```
+cd mysite
 ```
 
 Run server using the following command
