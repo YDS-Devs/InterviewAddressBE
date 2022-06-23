@@ -3,13 +3,16 @@
 python -m pip install --user virtualenv
 ~~~
 # create the virtual env using
-
-# 2- run: python -m venv env
-
+~~~
+python -m venv env
+~~~
 # Activate virtual env
-
-# 3- run: .\env\Scripts\activate
-
-# 4- run .\mysite\runserver.bat
-
-# 5- run .\mysite\loaddata.bat
+~~~
+.\env\Scripts\activate
+~~~
+~~~
+.\mysite\runserver.bat
+~~~
+~~~
+.\mysite\loaddata.bat
+~~~
