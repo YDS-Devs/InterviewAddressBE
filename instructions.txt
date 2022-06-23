@@ -1,6 +1,0 @@
-1-navigate into mysite
-#Activate virtual env
-2-activate virtual env
-3-run ..\env\Scripts\activate
-4-run .\runserver.bat
-7-run .\loaddata.bat
