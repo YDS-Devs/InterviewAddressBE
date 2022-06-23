@@ -10,9 +10,11 @@ python -m venv env
 ~~~
 .\env\Scripts\activate
 ~~~
+run server using the following command
 ~~~
 .\mysite\runserver.bat
 ~~~
+load data using the following command
 ~~~
 .\mysite\loaddata.bat
 ~~~
