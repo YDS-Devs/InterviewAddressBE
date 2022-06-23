@@ -67,11 +67,11 @@ pip install -r requirements.txt
 Run server using the following command
 
 ```
-bash .\mysite\runserver.bash
+bash ./mysite/runserver.bash
 ```
 
 Load data using the following command
 
 ```
-bash .\mysite\loaddata.bash
+bash ./mysite/loaddata.bash
 ```
