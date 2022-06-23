@@ -1,13 +1,13 @@
 from rest_framework import viewsets,mixins
 from rest_framework.viewsets import GenericViewSet,ModelViewSet
-from .serializers import AreaSerializer, StateSerializer
-from .models import State,Area
+from .serializers import AddressSerializer, AreaSerializer, StateSerializer
+from .models import Address, State,Area
 # Create your views here 
-class StateViewSet(ModelViewSet,GenericViewSet):
+class StateViewSet(ModelViewSet):
     queryset = State.objects.filter(country__name__icontains='Egypt')
     serializer_class = StateSerializer
 
-class AreaViewSet(ModelViewSet,GenericViewSet):
+class AreaViewSet(ModelViewSet):
     serializer_class = AreaSerializer
     def get_queryset(self):
         queryset = Area.objects.filter(state__id=self.kwargs.get('state_pk'))
@@ -15,3 +15,10 @@ class AreaViewSet(ModelViewSet,GenericViewSet):
 
     def get_serializer_context(self):
         return {'state_id':self.kwargs.get('state_pk')}
+
+class AddressViewSet(ModelViewSet):
+    
+    serializer_class = AddressSerializer
+    def get_queryset(self):
+        queryset = Address.objects.all()
+        return queryset

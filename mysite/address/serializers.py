@@ -22,7 +22,7 @@ class AreaSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ('id','area','description')
+        fields = ('id','area','name','description','floor_number','apartment_number')
 
 class ReadOnlyAddressSerializer(serializers.ModelSerializer):
     #serializer method to get area by name only

@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.db import models
 
 
@@ -35,7 +36,10 @@ class Area(models.Model):
 class Address(models.Model):
     area = models.ForeignKey(
         Area, null=False, blank=False, on_delete=models.deletion.CASCADE)
+    name = models.CharField(max_length=255, null=False, blank=False)
     description = models.TextField(null=False, blank=False)
+    floor_number = models.IntegerField(null=False, blank=False)
+    apartment_number = models.IntegerField(null=False, blank=False)
     # create new field called new char
 
     class Meta:
