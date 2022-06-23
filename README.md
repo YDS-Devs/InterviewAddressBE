@@ -35,11 +35,7 @@ Run server using the following command
 .\runserver.bat
 ```
 
-Load data using the following command
 
-```
-.\loaddata.bat
-```
 # ----------------------------------------------------------------------------------
 IF Unix/MacOS:
 
@@ -75,10 +71,4 @@ Run server using the following command
 
 ```
 bash runserver.bash
-```
-
-Load data using the following command
-
-```
-bash loaddata.bash
 ```
