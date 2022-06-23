@@ -1,7 +1,8 @@
+
 # initialize pip virutal env first you will need to instal virtual env from pip
-
-# 1- run: python -m pip install --user virtualenv
-
+```
+python -m pip install --user virtualenv
+```
 # create the virtual env using
 
 # 2- run: python -m venv env
