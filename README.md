@@ -32,13 +32,13 @@ cd mysite
 Run server using the following command
 
 ```
-.\mysite\runserver.bat
+.\runserver.bat
 ```
 
 Load data using the following command
 
 ```
-.\mysite\loaddata.bat
+.\loaddata.bat
 ```
 # ----------------------------------------------------------------------------------
 IF Unix/MacOS:
@@ -74,11 +74,11 @@ cd mysite
 Run server using the following command
 
 ```
-bash ./mysite/runserver.bash
+bash runserver.bash
 ```
 
 Load data using the following command
 
 ```
-bash ./mysite/loaddata.bash
+bash loaddata.bash
 ```
