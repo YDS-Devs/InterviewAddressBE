@@ -145,7 +145,7 @@ default_version='v1',
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="MedicalApp API",
+        title="Cities API",
         default_version='v1',
         description='Api Document for the Medical App',
         terms_of_service="https://www.google.com/policies/terms/",
