@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
         'drf_yasg',
 
@@ -56,6 +57,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+CORS_ALLOWED_ORIGINS = [
+'*']
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
