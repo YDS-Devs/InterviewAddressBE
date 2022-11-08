@@ -70,8 +70,8 @@ class User( AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['phone_number', 'full_name', 'birth_date']
 
     objects = UserManager()
-    def tokens(self, workplace=None):
-        refresh = RefreshToken.for_user(self, workplace)
+    def tokens(self):
+        refresh = RefreshToken.for_user(self)
         return {
             'refresh': str(refresh),
             'access': str(refresh.access_token)

@@ -29,9 +29,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 class LoginSerializer(serializers.Serializer):
     tokens = serializers.SerializerMethodField()
-    username = serializers.CharField(validators=[
-                                         RegexValidator(
-                                             regex='^P|M|E|A', message='National ID must Start with a suitable letter', code='nomatch')])
+    username = serializers.CharField()
     password = serializers.CharField(
         style={"input_type": "password"},  write_only=True)
 
@@ -44,16 +42,6 @@ class LoginSerializer(serializers.Serializer):
     class Meta:
         fields = ['id', 'username', 'password', 'tokens']
 
-    def get_role(self, identifier):
-        if identifier == 'M':
-            role = User.PRACTITIONERS_ROLE
-        elif identifier == 'P':
-            role = [User.PATIENT]
-        elif identifier == 'E':
-            role = User.ENTITIES_ROLE
-        else:
-            role = [User.ADMIN]
-        return role
 
     def validate(self, attrs):
         username = attrs.get('username', '')
@@ -63,15 +51,11 @@ class LoginSerializer(serializers.Serializer):
             'Account disabled, contact admin'
         )
 
-        user_type = username[0]
-        role = self.get_role(user_type)
         user = auth.authenticate(
-            username=username, password=password, role=role)
+            username=username, password=password)
 
         if not user:
             raise AuthenticationFailed('Invalid credentials, try again')
-        if not user.creation_approved:
-            raise AuthenticationFailed('Account not approved yet')
         if not user.is_active:
             raise AuthenticationFailed(
                 self.error_messages['no_active_account'], code='no_active_account')
