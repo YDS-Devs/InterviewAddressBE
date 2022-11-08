@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'rest_framework',
         'drf_yasg',
 
+        'authentication',
 
     'address'
 ]
+AUTH_USER_MODEL = "authentication.User"
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend','authentication.backends.AuthBackend',)
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -159,3 +162,34 @@ schema_view = get_schema_view(
     public=True,
     permission_classes=(permissions.AllowAny,),
 )
+
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False,
+    # 'PAGE_SIZE': 10,
+    # 'PAGE_SIZE_QUERY_PARAM': 'page_size',
+    'PAGE_SIZE': 100,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication'
+    ),
+    "DEFAULT_RENDERER_CLASSES": (
+        "medical_app.renderers.CustomJSONRenderer",
+        # "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    ),
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle',
+    #     'rest_framework.throttling.UserRateThrottle'
+    # ],
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '1/day',
+    #     'user': '1000/day'
+    # }
+}

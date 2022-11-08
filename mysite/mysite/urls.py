@@ -19,6 +19,9 @@ from .settings import schema_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+        path("api-auth/", include("rest_framework.urls")),
+
+    path('auth/', include('authentication.urls')),
     path('address/', include('address.urls')),
     re_path(r'^docs(?P<format>\.json|\.yaml)$',
             schema_view.without_ui(cache_timeout=0), name='schema-json'),

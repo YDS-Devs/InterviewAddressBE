@@ -22,7 +22,11 @@ class AreaSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ('id','area','name','description','floor_number','apartment_number')
+        fields = ('id','area','name','description','floor_number','apartment_number','longitude','latitude')
+    
+    def save(self, **kwargs):
+        self.validated_data['user'] = self.context['request'].user
+        return super().save(**kwargs)
 
 class ReadOnlyAddressSerializer(serializers.ModelSerializer):
     #serializer method to get area by name only
@@ -32,4 +36,4 @@ class ReadOnlyAddressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Address
-        fields = ('area','state','description')
+        fields = ('area','state','description','longitude','latitude')
