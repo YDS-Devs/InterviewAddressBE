@@ -12,7 +12,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-
+from rest_framework.mixins import CreateModelMixin
 from .models import User
 from .serializers import ( LoginSerializer,
                           LogoutSerializer, RegisterSerializer,
@@ -24,12 +24,12 @@ class CustomRedirect(HttpResponsePermanentRedirect):
     allowed_schemes = [os.environ.get('APP_SCHEME'), 'http', 'https']
 
 
-class UserViewSet(GenericViewSet):
+class UserViewSet(GenericViewSet,CreateModelMixin):
     serializer_class = RegisterSerializer
     queryset = User.objects.all()
-    permission_classes = (IsAuthenticated,)
+    
 
-    @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'],permission_classes = (IsAuthenticated,))
     def me(self, request):
         serializer = self.get_serializer(request.user)
         return Response(serializer.data)
