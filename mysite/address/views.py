@@ -1,6 +1,6 @@
 from rest_framework import viewsets,mixins
 from rest_framework.viewsets import GenericViewSet,ModelViewSet
-from .serializers import AddressSerializer, AreaSerializer, StateSerializer
+from .serializers import AddressSerializer, AreaSerializer, StateSerializer, ReadOnlyAddressSerializer
 from .models import Address, State,Area
 from rest_framework.permissions import IsAuthenticated
 # Create your views here 
@@ -21,6 +21,12 @@ class AddressViewSet(ModelViewSet):
     
     serializer_class = AddressSerializer
     permission_classes = (IsAuthenticated,)
+    
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return AddressSerializer
+        return ReadOnlyAddressSerializer
+    
     def get_queryset(self):
         queryset = Address.objects.filter(user=self.request.user)
         return queryset
